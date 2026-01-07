@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Nature_Menu.unity
+    guid: ed454f5517221c8459d7676f574aea15
+  - enabled: 1
+    path: Assets/Scenes/Nature_Bright.unity
+    guid: 963fe3e1fbf92454686b23e2de391558
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
