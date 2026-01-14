@@ -21,7 +21,12 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim;
 
- 
+    public int footstepClip = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -73,5 +78,24 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Grounded", charController.isGrounded);
     }
 
-  
+    private void OnTriggerStay(Collider other)
+    {
+        switch (other.tag)
+        {
+            case ("Path"):
+                footstepClip = 1;
+                break;
+            case ("Rock"):
+                footstepClip = 2;
+                break;
+            default:
+                footstepClip = 0;
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        footstepClip = 0;
+    }
 }
